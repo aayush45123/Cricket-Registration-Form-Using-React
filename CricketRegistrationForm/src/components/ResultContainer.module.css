@@ -1,0 +1,225 @@
+.resultContainer {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0;
+}
+
+.resultContent {
+  text-align: center;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #00c851, #007e33);
+  border-radius: 20px 20px 0 0;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 200, 81, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.resultContent::before {
+  content: "🏏✨";
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation: bounce 2s infinite;
+}
+
+.resultHeading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.resultMessage {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.submittedDetails {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(248, 249, 250, 0.95)
+  );
+  margin: 0;
+  padding: 2rem;
+  border-left: 5px solid #667eea;
+  backdrop-filter: blur(10px);
+  position: relative;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.submittedDetails:last-child {
+  border-radius: 0 0 20px 20px;
+  border-bottom: none;
+}
+
+.submittedDetails:hover {
+  transform: translateX(5px);
+  box-shadow: -5px 5px 20px rgba(102, 126, 234, 0.15);
+  border-left-color: #ff6b6b;
+}
+
+.submittedDetails h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #667eea;
+  display: inline-block;
+}
+
+.submittedDetails p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0.8rem 0;
+  padding: 0.3rem 0;
+  font-weight: 500;
+}
+
+.submittedDetails p:last-of-type {
+  margin-bottom: 1.5rem;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.submittedDetails button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.submittedDetails button:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+}
+
+.submittedDetails button:active {
+  transform: scale(0.95);
+}
+
+.submittedDetails button svg {
+  font-size: 1.5rem;
+  color: white;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resultContainer {
+    margin: 1rem;
+    max-width: none;
+  }
+
+  .resultContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .resultHeading {
+    font-size: 2rem;
+  }
+
+  .resultMessage {
+    font-size: 1.1rem;
+  }
+
+  .submittedDetails {
+    padding: 1.5rem;
+    padding-right: 4rem;
+  }
+
+  .submittedDetails h3 {
+    font-size: 1.3rem;
+  }
+
+  .submittedDetails p {
+    font-size: 1rem;
+  }
+
+  .submittedDetails button {
+    width: 40px;
+    height: 40px;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .submittedDetails button svg {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resultContent {
+    padding: 1.5rem 1rem;
+  }
+
+  .resultHeading {
+    font-size: 1.8rem;
+  }
+
+  .resultMessage {
+    font-size: 1rem;
+  }
+
+  .submittedDetails {
+    padding: 1.2rem;
+    padding-right: 3.5rem;
+  }
+
+  .submittedDetails h3 {
+    font-size: 1.2rem;
+  }
+
+  .submittedDetails p {
+    font-size: 0.95rem;
+    margin: 0.6rem 0;
+  }
+
+  .submittedDetails button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .submittedDetails button svg {
+    font-size: 1.2rem;
+  }
+}
+
+.cancelMessage {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}

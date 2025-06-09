@@ -1,0 +1,127 @@
+.inputContainer {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.inputField {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.inputField label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inputField input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.inputField input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.inputField input:focus {
+  outline: none;
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.inputField input:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.submit {
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 20px rgba(238, 90, 36, 0.3);
+}
+
+.submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(238, 90, 36, 0.4);
+  background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+}
+
+.submit:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(238, 90, 36, 0.3);
+}
+
+.submit svg {
+  font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .inputContainer {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    max-width: none;
+  }
+  
+  .inputField input {
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .submit {
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputContainer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .inputField {
+    margin-bottom: 1.2rem;
+  }
+  
+  .inputField label {
+    font-size: 0.9rem;
+  }
+  
+  .inputField input {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}

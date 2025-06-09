@@ -1,0 +1,207 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 25%, #2c5364 50%, #1e3c72 75%, #2a5298 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+  overflow-x: hidden;
+  padding: 2rem 1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px, 120px 120px;
+  animation: floatPattern 25s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(102, 126, 234, 0.1),
+    transparent,
+    rgba(255, 107, 107, 0.1),
+    transparent,
+    rgba(0, 200, 81, 0.1),
+    transparent
+  );
+  animation: rotate 30s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container > * {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Animated geometric shapes in background */
+.container::before {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.15) 1px, transparent 1px),
+    radial-gradient(circle at 20% 80%, rgba(255, 107, 107, 0.1) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 80% 80%, rgba(0, 200, 81, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0.5px, transparent 0.5px);
+  background-size: 100px 100px, 150px 150px, 80px 80px, 120px 120px, 60px 60px;
+  animation: floatPattern 20s linear infinite, shimmer 8s ease-in-out infinite alternate;
+}
+
+/* Professional animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes floatPattern {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Professional scrollbar styling */
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+/* Professional responsive design */
+@media (max-width: 1200px) {
+  .container {
+    padding: 1.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.5rem;
+    min-height: 100vh;
+  }
+  
+  .container::before {
+    background-size: 60px 60px, 90px 90px, 50px 50px, 70px 70px, 40px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.8rem 0.3rem;
+  }
+  
+  .container::after {
+    animation-duration: 40s;
+  }
+}
+
+/* High performance mode for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .container,
+  .container::before,
+  .container::after {
+    animation: none;
+  }
+  
+  .container > * {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 25%, #2d2d2d 50%, #1e1e1e 75%, #333333 100%);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .container {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
+  }
+  
+  .container::before,
+  .container::after {
+    opacity: 0.2;
+  }
+}
